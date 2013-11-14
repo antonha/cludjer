@@ -10,3 +10,10 @@ screen. Use main.clj as the script for Zephyros. Remember to
 See 
 https://github.com/sdegutis/zephyros/blob/master/Docs/Clojure.md
 for setup instructions.
+
+# Install
+- Download main.clj
+- Install zephyros
+- Add [lein-exec "0.3.0"] to your ~/.lein/profiles.clj :user :plugins
+  `{:user {:plugins [[lein-exec "0.3.0"]]}}`
+- Run main.clj from within zephyros
