@@ -19,4 +19,4 @@ for setup instructions.
 - Start Zephyros
 - Open Zepyhyros preferences (right-click icon in menu bar)
 - Select to run on TCP port
-- Put "lein exec <location of main.clj>" in the script box
+- Put "lein exec \<location of main.clj>" in the script box
