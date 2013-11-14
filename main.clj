@@ -10,8 +10,7 @@
 
 (defn next-fix [curr comp list] 
 	(let [next (first (filter #(comp %1 curr) list ))]
-		(if next next curr)
-	))
+		(if next next curr)))
 
 (defn round [n] (Math/floor  n))
 
@@ -43,15 +42,13 @@
 (defn nudge [max-size is-anchor offset-key size-key offset-for-size anchor-offset-from-size]
 	(let [
 		current-window (get-focused-window)
-		current-frame (get-frame current-window)
-		]
+		current-frame (get-frame current-window)]
 		(set-frame current-window
 			(if  (is-anchor (offset-key current-frame) (size-key current-frame))
 				(let [next-size (next-smaller max-size (size-key current-frame))]
 						(assoc current-frame 
 							size-key next-size
-							offset-key (offset-for-size next-size)
-							))
+							offset-key (offset-for-size next-size)))
 				(let [new-size 
 					(next-larger max-size (size-key current-frame))]
 					(if new-size
@@ -110,14 +107,12 @@
 	(let [win (first (visible-windows-for-app 
 			(find-app app-name)))]
 	(if win 
-		(focus-window win)
-		())))
+		(focus-window win) ())))
 
 (bind "E" ["CMD" "CTRL" "SHIFT"] #(focus-app "Sublime Text"))
 (bind "B" ["CMD" "CTRL" "SHIFT"] #(focus-app "Google Chrome"))
 (bind "M" ["CMD" "CTRL" "SHIFT"] #(focus-app "Mail"))
 (bind "C" ["CMD" "CTRL" "SHIFT"] #(focus-app "Colloquy"))
 (bind "T" ["CMD" "CTRL" "SHIFT"] #(focus-app "iTerm"))
-
 
 @listen-for-callbacks
